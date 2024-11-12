@@ -7,26 +7,16 @@ namespace employeeName.Models.DBEntities
 {
     public class Employee
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
+        public string? Email { get; set; } // Add this propert
 
-        [Required, MaxLength(50)]
-        [DisplayName("First Name")]
-        public string FirstName { get; set; }
 
-        [Required, MaxLength(50)]
-        [DisplayName("Last Name")]
-        public string LastName { get; set; }
 
-        [Required, EmailAddress]
-        [DisplayName("E-mail")]
-        public string Email { get; set; }
-
-        [DisplayName("Salary")]
-        public double? Salary { get; set; }
-
-        [DisplayName("Full Name")]
+        // Add this FullName property to combine FirstName and LastName
         public string FullName => $"{FirstName} {LastName}";
     }
+
+
 }
