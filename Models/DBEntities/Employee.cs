@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using employeeName.Models.DBEntities;
 
 namespace employeeName.Models.DBEntities
 {
@@ -12,29 +11,22 @@ namespace employeeName.Models.DBEntities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Column(TypeName = "Varchar(50)")]
+        [Required, MaxLength(50)]
         [DisplayName("First Name")]
-        public string? FirstName { get; set; }
+        public string FirstName { get; set; }
 
+        [Required, MaxLength(50)]
         [DisplayName("Last Name")]
-        public string? LastName { get; set; }
+        public string LastName { get; set; }
 
-        [DisplayName("Date Of Birth")]
-        public DateTime? DateOfBirth { get; set; }
-
+        [Required, EmailAddress]
         [DisplayName("E-mail")]
-        public string? Email { get; set; }
+        public string Email { get; set; }
 
         [DisplayName("Salary")]
         public double? Salary { get; set; }
 
         [DisplayName("Full Name")]
-        public string? FullName
-        {
-            get
-            {
-                return FirstName + " " + LastName;
-            }
-        }
+        public string FullName => $"{FirstName} {LastName}";
     }
 }

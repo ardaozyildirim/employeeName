@@ -18,9 +18,11 @@
   <ItemGroup>
     <None Remove="Models\DBEntities\" />
     <None Remove="DAL\" />
+    <None Remove="Views\Employee\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\DBEntities\" />
     <Folder Include="DAL\" />
+    <Folder Include="Views\Employee\" />
   </ItemGroup>
 </Project>
