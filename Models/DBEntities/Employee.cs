@@ -11,7 +11,7 @@ namespace employeeName.Models.DBEntities
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
 		public int Id { get; set; }
-		[Column(TypeName="Varchar(50DAL")]
+		[Column(TypeName="Varchar(50")]
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
